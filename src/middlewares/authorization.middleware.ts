@@ -5,6 +5,13 @@ import * as jwt from "jsonwebtoken"
 // roleRequired is the desired permission level in order to gain access, it can be:
 // "users" and/or "admin"
 const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): Promise<void> => {
+    if (typeof ctx.headers.authorization === "undefined") {
+        ctx.status = 403
+        ctx.response.body = {
+            errors: ["Authorization header missing"]
+        }
+        return
+    }
     const [strategy, token] = ctx.headers.authorization.split(" ")
     if (strategy !== "Bearer") {
         ctx.response.status = 401
@@ -18,7 +25,8 @@ const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): 
         const tokenDecoded = jwt.verify(token, process.env.JWT_SECRET) as JWT
         const hasPermission: boolean = roleRequired.includes(tokenDecoded.role)
         if (hasPermission) {
-            next()
+            ctx.clientData = tokenDecoded
+            await next()
         } else {
 		    ctx.set("Content-Type", "application/json")
 			ctx.status = 403
