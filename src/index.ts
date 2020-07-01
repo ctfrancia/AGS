@@ -1,6 +1,5 @@
 import * as Koa from "koa"
 import * as logger from "koa-logger"
-import * as json from "koa-json"
 import * as bodyParser from "koa-bodyparser"
 import * as cors from "koa-cors"
 import errorHandler from "./middlewares/errorhandler.middleware"
@@ -19,6 +18,5 @@ app
 	.use(cors())
 	.use(router.routes())
 	.use(router.allowedMethods())
-	// .use(json())
 
 	export const server = app.listen(PORT, (): void => console.log(`🌍 Server listening on port ${PORT} - ${ENV} environment`))
