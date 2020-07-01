@@ -4,6 +4,7 @@ import { Policy } from "../../lib/interfaces/policy.interface"
 import { Client } from "../../lib/interfaces/client.interface"
 import { getPolicies, getUserByPolicy } from "../../models/policy.db"
 
+const noPolicy = "No policies found"
 export const getPoliciesByName = async (ctx: Context): Promise<void> => {
    const n: NameId = ctx.params 
    ctx.set("Content-Type", "application/json")
@@ -16,7 +17,7 @@ export const getPoliciesByName = async (ctx: Context): Promise<void> => {
    } else {
        ctx.status = 404
        ctx.body = {
-           errors: ["No policies found"]
+           errors: [noPolicy]
        }
    }
 }
@@ -31,7 +32,7 @@ export const getUserOfPolicyNumber = async (ctx: Context): Promise<void> => {
     } else {
        ctx.status = 404
        ctx.response.body = {
-           errors: ["No policy found"]
+           errors: [noPolicy]
        }
     }
 }

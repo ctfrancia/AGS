@@ -2,13 +2,17 @@ import { Context, Next } from "koa"
 import { JWT } from "../lib/interfaces/jwt.interface"
 import * as jwt from "jsonwebtoken"
 
+const authorizationHeaderMissing = "Authorization header missing"
+const wrongStrategy = "Wrong authorization strategy" 
+const permissionDenied = "Permission denied"
+
 // roleRequired is the desired permission level in order to gain access, it can be:
 // "users" and/or "admin"
 const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): Promise<void> => {
     if (typeof ctx.headers.authorization === "undefined") {
         ctx.status = 403
         ctx.response.body = {
-            errors: ["Authorization header missing"]
+            errors: [authorizationHeaderMissing]
         }
         return
     }
@@ -16,7 +20,7 @@ const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): 
     if (strategy !== "Bearer") {
         ctx.response.status = 401
         ctx.response.body = {
-            errors: ["Wrong authorization strategy."]
+            errors: [wrongStrategy]
         }
         return
     }
@@ -31,7 +35,7 @@ const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): 
             ctx.set("Content-Type", "application/json")
 			ctx.status = 403
 			ctx.response.body = {
-				errors:["Permission denied"]
+				errors:[permissionDenied]
 			}
 			return
         }
