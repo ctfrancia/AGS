@@ -6,3 +6,7 @@ export interface Policy {
     installmentPayment: boolean,
     clientId: string,
 }
+
+export interface PolicyResponse {
+    policies: Policy[],
+}

@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "028eb100-0f45-4ceb-9e9a-9b5f8ea7ae44",
+		"name": "ags",
+		"description": "Api documentation of routes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/user/id/a0ece5db-cd14-4f21-812f-966633e7be86",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZmQxNTliLTU3YzQtNGQzNi05YmQ3LWE1OWNhMTMwNTdiYiIsInJvbGUiOiJhZG1pbiJ9.4ji3z_CafXh3wSaU0HepDA_M_Ah8H5PCX8YvXd9uKTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/id/a0ece5db-cd14-4f21-812f-966633e7be86",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"id",
+						"a0ece5db-cd14-4f21-812f-966633e7be86"
+					]
+				},
+				"description": "After id is the id of the user that you are searching for"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/user/name/Merrill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZmQxNTliLTU3YzQtNGQzNi05YmQ3LWE1OWNhMTMwNTdiYiIsInJvbGUiOiJhZG1pbiJ9.4ji3z_CafXh3wSaU0HepDA_M_Ah8H5PCX8YvXd9uKTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/name/Merrill",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"name",
+						"Merrill"
+					]
+				},
+				"description": "after the name is the person that you are searching for"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/policy/client-name/Manning",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZmQxNTliLTU3YzQtNGQzNi05YmQ3LWE1OWNhMTMwNTdiYiIsInJvbGUiOiJhZG1pbiJ9.4ji3z_CafXh3wSaU0HepDA_M_Ah8H5PCX8YvXd9uKTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/policy/client-name/Manning",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policy",
+						"client-name",
+						"Manning"
+					]
+				},
+				"description": "At the end is the name of the user that you are searching."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/policy/policy-number/7b624ed3-00d5-4c1b-9ab8-c265067ef58b",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZmQxNTliLTU3YzQtNGQzNi05YmQ3LWE1OWNhMTMwNTdiYiIsInJvbGUiOiJhZG1pbiJ9.4ji3z_CafXh3wSaU0HepDA_M_Ah8H5PCX8YvXd9uKTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/policy/policy-number/7b624ed3-00d5-4c1b-9ab8-c265067ef58b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policy",
+						"policy-number",
+						"7b624ed3-00d5-4c1b-9ab8-c265067ef58b"
+					]
+				},
+				"description": "get user based on policy number"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
