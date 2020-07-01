@@ -18,6 +18,8 @@ const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): 
     try {
         const tokenDecoded: string = jwtChecker(token)
         console.log(tokenDecoded)
+    } catch(e) {
+
     }
     /*
     const userID: string = ctx.cookies.get("userID")

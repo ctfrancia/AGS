@@ -1,9 +1,10 @@
 import { Context } from "koa"
 // import { UserId, NameId } from "../../lib/interfaces/userId.interface"
-import { getUserDataById, getUserDataByName } from "../../models/user.db" 
+// import { getUserDataById, getUserDataByName } from "../../models/user.db" 
 import { Client } from "../../lib/interfaces/client.interface"
 
 export const getUserById = async (ctx: Context): Promise<void> => {
+    /*
     const c: UserId = ctx.params
     ctx.set("Content-Type", "application/json")
 
@@ -23,9 +24,11 @@ export const getUserById = async (ctx: Context): Promise<void> => {
             errors: ["User not found"]
         }
     }
+    */
 }
 
 export const getUserByName = async (ctx: Context): Promise<void> => {
+    /*
    const c: NameId = ctx.params
    ctx.set("Content-Type", "application/json")
 
@@ -45,4 +48,5 @@ export const getUserByName = async (ctx: Context): Promise<void> => {
             errors: ["User not found"]
        }
    }
+   */
 }

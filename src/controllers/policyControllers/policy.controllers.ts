@@ -1,8 +1,8 @@
 import { Context } from "koa"
-import { NameId, UserId } from "../../lib/interfaces/userId.interface"
+// import { NameId, UserId } from "../../lib/interfaces/userId.interface"
 import { Policy } from "../../lib/interfaces/policy.interface"
 import { Client } from "../../lib/interfaces/client.interface"
-import { getPolicies, getUserByPolicy } from "../../models/policy.db"
+// import { getPolicies, getUserByPolicy } from "../../models/policy.db"
 
 export const getPoliciesByName = async (ctx: Context): Promise<void> => {
    const n: NameId = ctx.params 

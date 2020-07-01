@@ -18,6 +18,7 @@ export const getUserDataById = async (id: string): Promise<Client> => {
             return null
         }
         */
+       return
     } catch(e) {
         console.error("error in getUserDataById", JSON.stringify(e))
     }
