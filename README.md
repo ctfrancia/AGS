@@ -28,6 +28,18 @@ All responses will be formatted listed below, however, should there be an error 
 }
 ```
 
+### Reasons for error
+#### Authentication
+- "Authorization header missing" - this will be returned is no `Bearer` token is submitted in header
+- "Wrong authorization strategy"  - this will be returned if the authorization strategy is not "Bearer"
+- "Permission denied" - this will be returned if the user within the JWT doesn't have the appropriate role to access the route in question
+
+#### Policies
+- "No policies found" - this will be returned if the policy number or name for which is search is incorrectly applied *or* if there is no policy found.
+
+#### Clients
+- "No user found" - this will be returned 
+
 the reason for the array is because as the server grows there maybe different reasons and array of strings, or number for specific reasons, will be added.
 
 - `localhost:3000/user/id/:id` - `:id` represents the user id you are searching for. The return will be a JSON object of the user or if none is found a JSON object of the error format found about
