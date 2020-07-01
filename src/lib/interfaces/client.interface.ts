@@ -6,5 +6,13 @@ export interface Client {
 }
 
 export interface ClientResponse {
-    clients: Client[]
+    clients: Client[],
+}
+
+export interface UserId {
+    id: string,
+}
+
+export interface NameId {
+    name: string,
 }
