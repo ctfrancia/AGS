@@ -28,7 +28,7 @@ const authorize = (roleRequired: string[]) => async (ctx: Context, next: Next): 
             ctx.clientData = tokenDecoded
             await next()
         } else {
-		    ctx.set("Content-Type", "application/json")
+            ctx.set("Content-Type", "application/json")
 			ctx.status = 403
 			ctx.response.body = {
 				errors:["Permission denied"]

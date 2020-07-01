@@ -53,17 +53,3 @@ export const getUserDataByName = async (n: string): Promise<Client> => {
         console.error("error in getUserByName", JSON.stringify(e))
     }
 }
-
-export const roleCheck = async (id: string): Promise<Client> => {
-    const inCache: Client = cache.get(id)
-    if (typeof inCache !== "undefined") {
-        return inCache
-    } else {
-        try {
-            const resp = await fetch(clientUrl)
-            const body = await resp.text()
-        } catch (e) {
-            console.log("error in fetching from API", JSON.stringify(e))
-        }
-    }
-}
