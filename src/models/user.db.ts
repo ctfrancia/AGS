@@ -5,7 +5,7 @@ const clientUrl = "http://www.mocky.io/v2/5808862710000087232b75ac"
 
 export const getUserDataById = async (id: string): Promise<Client> => {
     try {
-        // check if in cache
+        // check if id is in cache
         const inCache: Client = cache.get(id)
         if (typeof inCache !== "undefined") {
             return inCache
@@ -30,19 +30,25 @@ export const getUserDataById = async (id: string): Promise<Client> => {
 
 export const getUserDataByName = async (n: string): Promise<Client> => {
     try {
+        // check if name is in cache
         const inCache: Client = cache.get(n)
         if (typeof inCache !== "undefined") {
             return inCache 
         }
-        /*
-        const client: Client = clientsList.clients.find((c: Client): boolean => c.name === n)
+
+        const resp = await fetch(clientUrl)
+        const body = await resp.text()
+        
+        const clientResponse: ClientResponse = JSON.parse(body)
+        const client: Client = clientResponse.clients.find((c: Client): boolean => c.name === n)
+
+        // if name is found add it to the cache
         if (typeof client !== "undefined") {
             cache.set(client.name, client)
             return client
         } else {
             return null
         }
-        */
     } catch(e) {
         console.error("error in getUserByName", JSON.stringify(e))
     }
