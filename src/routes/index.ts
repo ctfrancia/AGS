@@ -1,4 +1,4 @@
-import * as Router from "koa-router"
+import * as Router from "koa-router";
 import userRoutes from "./user.routes"
 import policyRoutes from "./policy.routes"
 import authorize  from "../middlewares/authorization.middleware"
