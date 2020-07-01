@@ -5,6 +5,7 @@ import { Client } from "../../lib/interfaces/client.interface"
 // import { getPolicies, getUserByPolicy } from "../../models/policy.db"
 
 export const getPoliciesByName = async (ctx: Context): Promise<void> => {
+    /*
    const n: NameId = ctx.params 
    ctx.set("Content-Type", "application/json")
 
@@ -25,9 +26,11 @@ export const getPoliciesByName = async (ctx: Context): Promise<void> => {
            errors: ["No policies found"]
        }
    }
+   */
 }
 
 export const getUserOfPolicyNumber = async (ctx: Context): Promise<void> => {
+    /*
     const p: UserId = ctx.params
 
     if (typeof p.id !== "string" || typeof p.id === "undefined") {
@@ -47,5 +50,5 @@ export const getUserOfPolicyNumber = async (ctx: Context): Promise<void> => {
     } else {
         ctx.response.body = user
     }
-
+    */
 }

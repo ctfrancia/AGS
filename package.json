@@ -12,7 +12,8 @@
     "koa-cors": "^0.0.16",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.1",
-    "koa-router": "^9.0.1"
+    "koa-router": "^9.0.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -22,6 +23,7 @@
     "@types/koa-json": "^2.0.18",
     "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.1",
+    "@types/node-fetch": "^2.5.7",
     "eslint": "^7.3.1",
     "jest": "^26.1.0",
     "supertest": "^4.0.2",
