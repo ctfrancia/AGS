@@ -19,6 +19,6 @@ app
 	.use(cors())
 	.use(router.routes())
 	.use(router.allowedMethods())
-	.use(json())
+	// .use(json())
 
 	export const server = app.listen(PORT, (): void => console.log(`🌍 Server listening on port ${PORT} - ${ENV} environment`))

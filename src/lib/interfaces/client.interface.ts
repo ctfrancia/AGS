@@ -4,3 +4,7 @@ export interface Client {
     email: string,
     role: string,
 }
+
+export interface ClientResponse {
+    clients: Client[]
+}
