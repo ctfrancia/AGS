@@ -10,14 +10,15 @@ const testUser = {
     "email": "merrillblankenship@quotezart.com",
     "role": "user"
 }
+
 beforeAll(async () => {
- // do something before anything else runs
-    console.log("Jest starting!");
+    server.close();
+    // console.log("Jest starting!");
 });
 // close the server after each test
 afterAll(() => {
     server.close();
-    console.log("server closed!");
+    // console.log("server closed!");
 });
 describe("Get user/client information by Id", () => {
     test("Get home route GET /", async () => {

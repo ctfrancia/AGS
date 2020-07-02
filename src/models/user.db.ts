@@ -33,7 +33,7 @@ export const getUserDataByName = async (n: string): Promise<Client> => {
         // check if name is in cache
         const inCache: Client = cache.get(n)
         if (typeof inCache !== "undefined") {
-            return inCache 
+            return inCache
         }
 
         const resp = await fetch(clientUrl)
