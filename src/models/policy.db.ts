@@ -23,7 +23,7 @@ export const getPolicies = async (n: string): Promise<Policy[]> => {
         const policyResponse: PolicyResponse = JSON.parse(body)
         const policies = policyResponse.policies.filter((p: Policy): boolean => p.clientId === clientData.id)
         cache.set(n, policies)    
-        return policies
+        return policies.length > 0 ? policies : null
 
     } catch(e) {
         console.log("error getting policies", JSON.stringify(e))
