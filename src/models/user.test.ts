@@ -48,14 +48,13 @@ describe("getUserByName tests", () => {
 
     test("Passing in an id instead of an name should result in null", async () => {
         const response = await getUserDataByName(testUser.id)
-        expect(response).toEqual(testUser)
         /*
             for the life of me I can't figure out how I am getting a response back that
             isn't null. I have tried putting console logs in it to see where it is getting
             catching it is always responding with the user. Can't see how or why. All other
             cases has the proper response except for this one.
         */
-        // expect(response).toEqual(null)
+        expect(response).toEqual(null)
     })
 
     test("Passing in an e-name instead of an name should result in null", async () => {
